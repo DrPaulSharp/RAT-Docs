@@ -1,4 +1,4 @@
-import RATapi as RAT
+import ratapi as RAT
 import numpy as np
 
 problem = RAT.Project(calculation='domains')

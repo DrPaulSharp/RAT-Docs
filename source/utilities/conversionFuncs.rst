@@ -28,7 +28,7 @@ To convert this, simply navigate to the project directory, and run the following
 
     .. code-block:: Python
 
-        from RATapi.utils.convert import r1_to_project_class
+        from ratapi.utils.convert import r1_to_project_class
 
         problem = r1_to_project_class('monolayer_8_contrasts.mat')
 
@@ -45,7 +45,7 @@ This produces a **Project** object containing the R1 project, which can then be 
 
     .. code-block:: Python
         
-        import RATapi as RAT
+        import ratapi as RAT
 
         controls = RAT.Controls(procedure='de', parallel='contrasts')
         problem, results = RAT.run(problem, controls)
@@ -83,7 +83,7 @@ It is also possible to do the opposite conversion, and convert any RAT **Project
 
     .. code-block:: Python
 
-        from RATapi.utils.convert import project_class_to_r1
+        from ratapi.utils.convert import project_class_to_r1
 
         project_class_to_r1(problem, "./testProject/myConvertedProject") 
 

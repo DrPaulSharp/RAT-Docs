@@ -5,7 +5,7 @@ from io import StringIO
 
 from docutils import nodes
 
-import RATapi
+import ratapi
 
 from sphinx.application import Sphinx
 from sphinx.util.docutils import SphinxDirective
@@ -44,7 +44,7 @@ def setup(app: Sphinx) -> ExtensionMetadata:
 
     def setup_envs(*ignore):
         """Initialise Python/MATLAB environments."""
-        app.env.snippets_env = {"RAT": RATapi} 
+        app.env.snippets_env = {"RAT": ratapi} 
         app.env.matlab_engine = setup_matlab()
         app.env.matlab_engine.eval(
             "cd('API'); addPaths; cd('..'); ratVars = who;", nargout=0
@@ -52,7 +52,7 @@ def setup(app: Sphinx) -> ExtensionMetadata:
 
     def clear_envs(*ignore):
         """Clear Python/MATLAB environments from the build environment."""
-        app.env.snippets_env = {"RAT": RATapi}
+        app.env.snippets_env = {"RAT": ratapi}
         app.env.matlab_engine.eval(
             r"clearvars('-except', 'ratVars', ratVars{:});", nargout=0
         )

@@ -1,6 +1,6 @@
 Project
 -------
 
-.. autopydantic_model:: RATapi.Project
+.. autopydantic_model:: ratapi.Project
    :members:
 

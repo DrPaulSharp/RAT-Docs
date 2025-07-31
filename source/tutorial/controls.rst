@@ -137,3 +137,6 @@ See the :ref:`resampling page<resampling>` for more details. In short:
 
 - ``resampleNPoints``: The initial number of domain points (layers) sampled by the algorithm at the start.
 
+``numSimulationPoints``
+^^^^^^^^^^^^^^^^^^^^^^^
+The number of points used for a reflectivity simulation where no data is present.

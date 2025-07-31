@@ -853,7 +853,7 @@ and our new dataset appears in the table:
 
             from importlib.resources import files
             import numpy as np
-            data_path =  files("RATapi.examples.data")
+            data_path =  files("ratapi.examples.data")
             myData = np.loadtxt(data_path / 'c_PLP0016596.dat', delimiter=',')
             problem.data.append(name='My new datafile', data=myData)
             print(problem.data)
@@ -953,7 +953,7 @@ To start, we first make an instance of the **Project** class:
     
     .. code-block:: Python
 
-        import RATapi as RAT
+        import ratapi as RAT
         problem = RAT.Project(name='DSPC monolayers')
 
 Then we need to define the parameters we need. We'll do this by making a parameters block, and adding these to the project:

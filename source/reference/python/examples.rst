@@ -1,5 +1,5 @@
 Examples 
 --------
 
-.. automodule:: RATapi.examples
+.. automodule:: ratapi.examples
    :members:

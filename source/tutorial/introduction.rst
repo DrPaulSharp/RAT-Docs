@@ -53,7 +53,7 @@ The code block below shows how to set up each object for each language, as well 
 
     .. code-block:: Python
 
-        import RATapi as RAT
+        import ratapi as RAT
 
         # Create project and controls objects
         project = RAT.Project()
@@ -135,7 +135,7 @@ definition and explain what it describes.
 
         .. output:: Python
 
-            import RATapi as RAT
+            import ratapi as RAT
 
             problem = RAT.Project.load("source/tutorial/data/two_contrast_example.json")
             print(problem)

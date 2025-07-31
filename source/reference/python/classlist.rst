@@ -1,4 +1,4 @@
 ClassList
 ---------
 
-.. autoclass:: RATapi.ClassList
+.. autoclass:: ratapi.ClassList

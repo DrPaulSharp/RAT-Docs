@@ -29,8 +29,8 @@ if not os.path.isdir(matlab_src_dir) or not os.path.isfile(os.path.join(matlab_s
                             'Please download and extract the RAT release to the API folder.')
 sys.path.insert(0, matlab_src_dir)
 
-import RATapi
-sys.path.insert(0, os.path.dirname(os.path.abspath(RATapi.__file__)))
+import ratapi
+sys.path.insert(0, os.path.dirname(os.path.abspath(ratapi.__file__)))
 project = 'RAT'
 copyright = u'2022-{}, ISIS Neutron and Muon Source'.format(datetime.date.today().year)
 author = 'Arwel Hughes, Sethu Pastula, Alex Room, Rabiya Farooq, Paul Sharp, Stephen Nneji'
@@ -52,7 +52,7 @@ extensions = ['sphinxcontrib.matlab', 'sphinx.ext.napoleon', 'sphinx.ext.autodoc
 templates_path = ['_templates']
 
 # -- Setup example files -----------------------------------------------------
-PYTHON_RAT_RELEASE = metadata.version("RATapi")
+PYTHON_RAT_RELEASE = metadata.version("ratapi")
 
 MATLAB_AVAILABLE = True
 try:
@@ -67,14 +67,14 @@ if not os.path.isdir("./python_examples/data"):
         zf.extractall()
     print("Copying Jupyter notebooks...")
     for directory in ['normal_reflectivity', 'domains', 'absorption']:
-        for file in Path(f"./python-RAT-{PYTHON_RAT_RELEASE}/RATapi/examples/{directory}/").glob('*'):
+        for file in Path(f"./python-RAT-{PYTHON_RAT_RELEASE}/ratapi/examples/{directory}/").glob('*'):
             shutil.copy(file, "./python_examples/notebooks/")
     if MATLAB_AVAILABLE:  # convert_rascal example requires matlab engine
-        for file in Path(f"./python-RAT-{PYTHON_RAT_RELEASE}/RATapi/examples/convert_rascal_project/").glob('*'):
+        for file in Path(f"./python-RAT-{PYTHON_RAT_RELEASE}/ratapi/examples/convert_rascal_project/").glob('*'):
             shutil.copy(file, "./python_examples/notebooks/")
 
 
-    shutil.copytree(f"./python-RAT-{PYTHON_RAT_RELEASE}/RATapi/examples/data", "./python_examples/data", dirs_exist_ok=True)
+    shutil.copytree(f"./python-RAT-{PYTHON_RAT_RELEASE}/ratapi/examples/data", "./python_examples/data", dirs_exist_ok=True)
 
     shutil.rmtree(f"./python-RAT-{PYTHON_RAT_RELEASE}")
 
@@ -149,7 +149,7 @@ nbsphinx_prolog = r"""
 
     <div class="admonition note">
       This page was generated from the notebook {{ env.docname.split('/')|last|e + '.ipynb' }} found in 
-      <a class="reference external" href="https://github.com/RascalSoftware/python-RAT/blob/"""+PYTHON_RAT_RELEASE+r"""/RATapi/examples/">the Python-RAT repository</a>.
+      <a class="reference external" href="https://github.com/RascalSoftware/python-RAT/blob/"""+PYTHON_RAT_RELEASE+r"""/ratapi/examples/">the Python-RAT repository</a>.
       <a href="{{ env.docname.split('/')|last|e + '.ipynb' }}" class="reference download internal" download>Download notebook</a>.
     </div>
 
@@ -159,7 +159,7 @@ nbsphinx_prolog = r"""
 
     .. code-block:: python
 
-        from RATapi.examples import {{ env.docname.split('/')|last|e }}
+        from ratapi.examples import {{ env.docname.split('/')|last|e }}
         project, results = {{ env.docname.split('/')|last|e }}() 
 
 -------------------------------------------------------------------------------------

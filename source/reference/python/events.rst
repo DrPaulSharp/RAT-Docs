@@ -1,5 +1,5 @@
 Events
 ------
 
-.. automodule:: RATapi.events
+.. automodule:: ratapi.events
    :members:

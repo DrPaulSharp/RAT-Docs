@@ -36,10 +36,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ ${VERSION} == 'dev' ]; then
           wget https://github.com/RascalSoftware/RAT/releases/download/nightly/Linux.zip
-          pip install RATapi
+          pip install ratapi --upgrade
         else
           wget "https://github.com/RascalSoftware/RAT/releases/download/${VERSION}/Linux.zip"
-          pip install RATapi==${VERSION} || pip install RATapi
+          pip install ratapi==${VERSION} || pip install ratapi --upgrade
         fi
         unzip Linux.zip -d API/
         rm API/utilities/mockFunction.m  # as otherwise the MATLAB reference fails to parse it
